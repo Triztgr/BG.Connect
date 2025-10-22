@@ -256,3 +256,38 @@ footer{
 @media (prefers-reduced-motion: reduce){
   *, *::before, *::after{ animation:none !important; transition:none !important; }
 }
+/* ===== Forçar grade 3 colunas em todas as telas ===== */
+.galeria-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  justify-items: center;
+  align-items: stretch;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 10px;
+}
+
+.galeria-item {
+  width: 100% !important;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(160deg, #151515, #2a2a2a);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* mídia 100% do card (corte proporcional) */
+.galeria-item img,
+.galeria-item video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  display: block;
+}
+
+/* Em telas muito pequenas, ainda mantemos 3 colunas,
+   só reduzimos o espaçamento pra caber confortável */
+@media (max-width: 420px) {
+  .galeria-grid { gap: 6px !important; padding: 0; }
+}
