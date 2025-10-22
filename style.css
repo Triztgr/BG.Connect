@@ -312,24 +312,35 @@ footer{
     max-width: 140px;
   }
 }
-/* ===== HEADER COMPACTO SÓ COM LOGO ===== */
+/* ===== HEADER COM LINHA ROXA EFEITO GLOW ===== */
 header {
   text-align: center;
-  padding: 20px 10px 10px; /* bem mais compacto */
+  padding: 20px 10px 10px;
   background-color: transparent;
+  position: relative;
   border: none;
   box-shadow: none;
 }
 
-header h1 {
-  display: none; /* esconde o título */
+/* linha roxa sob o header */
+header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(156, 39, 176, 0.9), rgba(255, 152, 0, 0.7));
+  border-radius: 3px;
+  box-shadow: 0 0 12px rgba(156, 39, 176, 0.6);
 }
 
-/* logo centralizada e proporcional */
+/* logo */
 header .logo {
   display: block;
-  margin: 0 auto;
-  max-width: 160px; /* tamanho ideal pro desktop */
+  margin: 0 auto 10px;
+  max-width: 160px;
   height: auto;
   filter: drop-shadow(0 0 8px rgba(255, 152, 0, 0.3));
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -340,7 +351,7 @@ header .logo:hover {
   filter: drop-shadow(0 0 14px rgba(156, 39, 176, 0.5));
 }
 
-/* no mobile, reduz ainda mais */
+/* responsivo */
 @media (max-width: 550px) {
   header {
     padding: 12px 6px;
@@ -348,5 +359,10 @@ header .logo:hover {
 
   header .logo {
     max-width: 120px;
+  }
+
+  header::after {
+    width: 90%;
+    height: 1.5px;
   }
 }
