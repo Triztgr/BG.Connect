@@ -279,27 +279,52 @@ header, main, footer {
   margin: 0;          /* encosta na esquerda do container */
 }
 
-/* 2) Galeria mais compacta e com múltiplas colunas no mobile/tablet */
-.galeria-grid { max-width: 1100px; }
-
-/* desktop grande – mantém cartão mais estreito, visual limpo */
-@media (min-width: 1101px){
-  .galeria-item { width: 260px; } /* ajuste fino */
+/* ===== Nova Galeria - Grade fixa 3 colunas ===== */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  justify-items: center;
+  align-items: stretch;
+  margin: 40px auto;
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 10px;
 }
 
-/* tablet / telas médias – 3 por linha */
-@media (max-width: 1100px){
-  .galeria-item { width: 32%; }
+/* Cards padronizados */
+.galeria-item {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Mantém quadrado */
+  background: linear-gradient(160deg, #151515, #2a2a2a);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* mobile – 2 por linha */
-@media (max-width: 700px){
-  .galeria-item { width: 48%; }
+.galeria-item img,
+.galeria-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Faz o corte perfeito */
+  display: block;
 }
 
-/* celulares muito pequenos – 1 por linha */
-@media (max-width: 380px){
-  .galeria-item { width: 100%; }
+.galeria-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 152, 0, 0.25);
+}
+
+/* Mantém 3 colunas mesmo no celular */
+@media (max-width: 700px) {
+  .galeria-grid {
+    gap: 6px;
+    padding: 0;
+  }
+  .galeria-item {
+    aspect-ratio: 1 / 1;
+  }
 }
 
 /* 3) WhatsApp: desktop = só ícone; mobile = barra com texto */
