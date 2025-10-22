@@ -1,139 +1,202 @@
-/* ======== BG CONNECT - DARK PREMIUM ======== */
+/* ======== BG CONNECT - DARK PREMIUM NEON + GLAM MOTION ======== */
 
-body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.8;
-    margin: 0;
-    padding: 0;
-    background-color: #0a0a0a; /* Preto mais profundo */
-    color: #f5f5f5; /* Texto claro */
-}
+/* Google Fonts (opcional, mas dá o up premium) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-/* Containers principais */
-header, main, footer {
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 30px;
-    background: linear-gradient(145deg, #111111, #1b1b1b);
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+:root{
+  --bg-dark-1:#0a0a0a;
+  --bg-dark-2:#111111;
+  --text:#f5f5f5;
+  --muted:#bdbdbd;
+  --roxo:#9c27b0;
+  --laranja:#ff9800;
+  --laranja-dark:#d47f00;
+  --card-grad-1:#151515;
+  --card-grad-2:#2a2a2a;
+  --shadow-neon: 0 0 18px rgba(156,39,176,.35), 0 0 28px rgba(255,152,0,.15);
 }
 
-/* Cabeçalho */
-header {
-    text-align: center;
-    border-bottom: 2px solid #9c27b0;
-}
-h1 {
-    color: #ff9800; /* Dourado vibrante */
-    letter-spacing: 2px;
-    font-size: 2.2em;
-}
-h2 {
-    color: #9c27b0; /* Roxo BG Connect */
-    text-transform: uppercase;
-    margin-top: 40px;
+/* Fundo com gradiente animado sutil + glow de canto */
+body{
+  font-family:'Poppins',sans-serif;
+  line-height:1.8;
+  margin:0; padding:0;
+  color:var(--text);
+  background: radial-gradient(80vw 80vh at 110% -10%, rgba(156,39,176,.18), transparent 60%),
+              radial-gradient(70vw 70vh at -10% 110%, rgba(255,152,0,.12), transparent 60%),
+              linear-gradient(180deg, var(--bg-dark-1), var(--bg-dark-2));
+  overflow-x:hidden;
 }
 
-/* Links */
-a {
-    color: #ff9800;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-a:hover {
-    color: #d47f00;
-    text-decoration: underline;
-}
-
-/* Galeria */
-.galeria-grid {
-    margin: 40px auto;
-}
-.galeria-item {
-    width: 250px;
-    margin-bottom: 25px;
-    background: linear-gradient(160deg, #151515, #2a2a2a);
-    border-radius: 10px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-.galeria-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(255, 152, 0, 0.3);
-}
-.galeria-item img, .galeria-item video {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px;
+/* Veludo escuro com borda luminosa */
+header, main, footer{
+  max-width:1000px;
+  margin:30px auto;
+  padding:32px;
+  background: linear-gradient(145deg, rgba(17,17,17,.95), rgba(20,20,20,.92));
+  box-shadow: 0 0 25px rgba(0,0,0,.6);
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.06);
+  position:relative;
 }
 
-/* Seções */
-section {
-    margin-bottom: 40px;
+/* filete neon na base do header */
+header{
+  text-align:center;
+  border-bottom:2px solid var(--roxo);
+  box-shadow: inset 0 -2px 0 0 rgba(156,39,176,.4);
 }
 
-/* Contato */
-#contato ul {
-    list-style: none;
-    padding: 0;
+/* Títulos com glow elegante */
+h1{
+  color:var(--laranja);
+  letter-spacing:2px;
+  font-size:2.3rem;
+  text-shadow: 0 0 10px rgba(255,152,0,.35), 0 0 20px rgba(255,152,0,.15);
+  margin: 0 0 6px 0;
 }
-#contato li {
-    margin: 10px 0;
+h2{
+  color:var(--roxo);
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  margin:42px 0 18px;
+  position:relative;
 }
-#contato a {
-    background: #9c27b0;
-    color: #fff;
-    padding: 10px 18px;
-    border-radius: 30px;
-    transition: background 0.3s;
+h2::after{
+  content:"";
+  display:block;
+  width:72px;
+  height:3px;
+  background: linear-gradient(90deg,var(--roxo),var(--laranja));
+  border-radius:3px;
+  margin-top:8px;
+  box-shadow: 0 0 12px rgba(156,39,176,.6);
+  transform-origin:left;
+  transform: scaleX(0);
+  transition: transform .6s ease;
 }
-#contato a:hover {
-    background: #ff9800;
+section:hover h2::after{ transform: scaleX(1); }
+
+/* Texto e links */
+p{ color:#e8e8e8; }
+a{
+  color:var(--laranja);
+  text-decoration:none;
+  font-weight:600;
+  transition: color .25s ease, text-shadow .25s ease;
+}
+a:hover{
+  color:var(--laranja-dark);
+  text-shadow: 0 0 10px rgba(255,152,0,.25);
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    font-size: 0.9em;
-    color: #a0a0a0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+/* ===== CTA / Botões ===== */
+.btn,
+#contato a{
+  display:inline-block;
+  background: linear-gradient(135deg,var(--roxo),var(--laranja));
+  color:#111;
+  padding:12px 22px;
+  border-radius:999px;
+  font-weight:700;
+  letter-spacing:.04em;
+  box-shadow: 0 6px 18px rgba(156,39,176,.25), 0 6px 28px rgba(255,152,0,.15);
+  transition: transform .25s ease, filter .25s ease, box-shadow .25s ease;
+  border: none;
+}
+.btn:hover,
+#contato a:hover{
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow: 0 10px 28px rgba(156,39,176,.35), 0 10px 38px rgba(255,152,0,.25);
 }
 
-/* Botão flutuante do WhatsApp */
-.whatsapp-float {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background-color: #25d366;
-    color: white;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 28px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-    z-index: 100;
-}
-.whatsapp-float:hover {
-    transform: scale(1.1);
+/* Versão outline (opcional) */
+.btn-outline{
+  background: transparent;
+  color:var(--text);
+  border:2px solid transparent;
+  border-image: linear-gradient(90deg,var(--roxo),var(--laranja)) 1;
+  box-shadow: var(--shadow-neon);
 }
 
-/* Responsividade */
-@media (max-width: 850px) {
-    .galeria-item {
-        width: 48%;
-    }
+/* ===== Galeria (Masonry cuida do grid) ===== */
+.galeria-grid{ margin: 40px auto; }
+.galeria-item{
+  width:250px;
+  margin-bottom:24px;
+  background: linear-gradient(160deg,var(--card-grad-1),var(--card-grad-2));
+  border-radius:14px;
+  box-shadow: 0 6px 22px rgba(0,0,0,.55);
+  overflow:hidden;
+  transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease, filter .45s ease;
+  border:1px solid rgba(255,255,255,.06);
+  position:relative;
 }
-@media (max-width: 550px) {
-    .galeria-item {
-        width: 100%;
-    }
+.galeria-item::before{
+  /* borda neon suave ao passar o mouse */
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(135deg, rgba(156,39,176,.18), rgba(255,152,0,.12));
+  opacity:0; pointer-events:none;
+  transition: opacity .45s ease;
+}
+.galeria-item:hover{
+  transform: translateY(-10px) rotateZ(-.3deg) scale(1.015);
+  box-shadow: 0 14px 32px rgba(0,0,0,.65), 0 0 24px rgba(156,39,176,.25);
+  filter: saturate(1.05);
+}
+.galeria-item:hover::before{ opacity:1; }
+
+.galeria-item img, .galeria-item video{
+  width:100%; height:auto; display:block;
+}
+
+/* ===== Contato ===== */
+#contato ul{ list-style:none; padding:0; display:flex; gap:14px; flex-wrap:wrap; }
+#contato li{ margin:6px 0; }
+#contato a{ color:#111; } /* já tem gradiente no botão */
+
+/* ===== Footer ===== */
+footer{
+  text-align:center;
+  font-size:.95em;
+  color:var(--muted);
+  border-top:1px solid rgba(255,255,255,.08);
+}
+
+/* ===== Botão flutuante do WhatsApp ===== */
+.whatsapp-float{
+  position:fixed;
+  bottom:24px; right:24px;
+  background:#25d366;
+  color:#111;
+  border-radius:50%;
+  width:62px; height:62px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:28px;
+  box-shadow:0 8px 24px rgba(37,211,102,.35);
+  transition: transform .25s ease, box-shadow .25s ease;
+  z-index:100;
+}
+.whatsapp-float:hover{
+  transform: scale(1.08);
+  box-shadow:0 10px 32px rgba(37,211,102,.45);
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 1100px){
+  header, main, footer{ margin:22px 16px; }
+}
+@media (max-width: 850px){
+  .galeria-item{ width:48%; }
+}
+@media (max-width: 550px){
+  .galeria-item{ width:100%; }
+  h1{ font-size:1.9rem; }
+}
+
+/* ===== Redução de movimento (acessibilidade) ===== */
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{ animation:none !important; transition:none !important; }
 }
