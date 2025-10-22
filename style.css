@@ -312,3 +312,41 @@ footer{
     max-width: 140px;
   }
 }
+/* ===== HEADER COMPACTO SÓ COM LOGO ===== */
+header {
+  text-align: center;
+  padding: 20px 10px 10px; /* bem mais compacto */
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+header h1 {
+  display: none; /* esconde o título */
+}
+
+/* logo centralizada e proporcional */
+header .logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 160px; /* tamanho ideal pro desktop */
+  height: auto;
+  filter: drop-shadow(0 0 8px rgba(255, 152, 0, 0.3));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+header .logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 14px rgba(156, 39, 176, 0.5));
+}
+
+/* no mobile, reduz ainda mais */
+@media (max-width: 550px) {
+  header {
+    padding: 12px 6px;
+  }
+
+  header .logo {
+    max-width: 120px;
+  }
+}
