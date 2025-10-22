@@ -156,15 +156,6 @@ a:hover{
   }
 }
 
-/* ===== Sobre Mim alinhado à esquerda ===== */
-#sobre {
-  text-align: left;
-}
-#sobre p {
-  max-width: 55ch;
-  margin: 0 auto 20px 0;
-}
-
 /* ===== Contato ===== */
 #contato ul{ 
   list-style:none; 
@@ -364,5 +355,20 @@ header .logo:hover {
   header::after {
     width: 90%;
     height: 1.5px;
+  }
+}
+/* ===== Ajuste de fonte no "Sobre Mim" ===== */
+#sobre p {
+  font-size: 0.95rem; /* fonte um pouco menor */
+  line-height: 1.7; /* mantém legível */
+  color: #e0e0e0;
+  max-width: 55ch;
+  margin: 0 auto 20px 0;
+}
+
+@media (max-width: 550px) {
+  #sobre p {
+    font-size: 0.9rem; /* ainda mais leve no mobile */
+    line-height: 1.6;
   }
 }
