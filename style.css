@@ -270,3 +270,52 @@ header, main, footer {
     letter-spacing: .02em;
   }
 }
+/* ===== Ajustes pedidos ===== */
+
+/* 1) Sobre Mim alinhado à esquerda */
+#sobre { text-align: left; }
+#sobre p {
+  max-width: 70ch;    /* boa leitura */
+  margin: 0;          /* encosta na esquerda do container */
+}
+
+/* 2) Galeria mais compacta e com múltiplas colunas no mobile/tablet */
+.galeria-grid { max-width: 1100px; }
+
+/* desktop grande – mantém cartão mais estreito, visual limpo */
+@media (min-width: 1101px){
+  .galeria-item { width: 260px; } /* ajuste fino */
+}
+
+/* tablet / telas médias – 3 por linha */
+@media (max-width: 1100px){
+  .galeria-item { width: 32%; }
+}
+
+/* mobile – 2 por linha */
+@media (max-width: 700px){
+  .galeria-item { width: 48%; }
+}
+
+/* celulares muito pequenos – 1 por linha */
+@media (max-width: 380px){
+  .galeria-item { width: 100%; }
+}
+
+/* 3) WhatsApp: desktop = só ícone; mobile = barra com texto */
+.whatsapp-float span { display: none; }       /* desktop: esconde texto */
+@media (max-width: 550px){
+  .whatsapp-float {
+    left: 12px; right: 12px; bottom: 12px;
+    width: auto; height: 54px; border-radius: 14px;
+    font-size: 18px;
+    background: linear-gradient(135deg, #9c27b0, #ff9800);
+    color: #111;
+    display: flex; gap: 10px;
+    justify-content: center; align-items: center;
+  }
+  .whatsapp-float span { 
+    display: inline-block; 
+    font-weight: 700; letter-spacing: .02em;
+  }
+}
