@@ -282,27 +282,45 @@ footer{
 @media (max-width: 420px) {
   .galeria-grid { gap: 6px !important; padding: 0; }
 }
-/* ===== LOGO ===== */
+/* ===== LOGO EM DESTAQUE ===== */
 .logo {
   display: block;
-  margin: 30px auto 0 auto; /* centraliza */
-  max-width: 280px; /* tamanho máximo no desktop */
+  margin: 60px auto 20px auto; /* centraliza e dá mais respiro */
+  max-width: 380px; /* aumenta o tamanho no desktop */
   height: auto;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  filter: drop-shadow(0 0 8px rgba(255, 152, 0, 0.3));
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: drop-shadow(0 0 14px rgba(255, 152, 0, 0.4))
+          drop-shadow(0 0 28px rgba(156, 39, 176, 0.25));
+  animation: logoFadeIn 1s ease-out;
 }
 
+/* animação de entrada */
+@keyframes logoFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* efeito ao passar o mouse */
 .logo:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 14px rgba(156, 39, 176, 0.5));
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 18px rgba(156, 39, 176, 0.6))
+          drop-shadow(0 0 28px rgba(255, 152, 0, 0.45));
 }
 
 /* Ajuste para telas menores */
 @media (max-width: 650px) {
   .logo {
-    max-width: 140px;
+    max-width: 220px; /* continua destacada, mas proporcional */
+    margin: 40px auto 10px auto;
   }
 }
+
 /* ===== HEADER COM LINHA ROXA EFEITO GLOW ===== */
 header {
   text-align: center;
@@ -487,4 +505,30 @@ header .logo:hover {
   .servicos-grid{ grid-template-columns: 1fr; }
   .flow-steps{ grid-template-columns: 1fr; }
   #servicos .servicos-intro{ text-align: left; margin-left: 0; }
+}
+/* ===== Cards clicáveis (link-Wrapper) ===== */
+a.servico-link{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+}
+a.servico-link .servico-card{
+  cursor:pointer;
+}
+a.servico-link:hover .servico-card{
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(156,39,176,.25), 0 12px 34px rgba(255,152,0,.18);
+}
+
+/* ===== Mobile: grade com 2 colunas ===== */
+@media (max-width: 600px){
+  .servicos-grid{
+    grid-template-columns: repeat(2, 1fr); /* antes era 1fr */
+    gap: 10px;
+  }
+  /* opcional: botões menores dentro dos cards no mobile */
+  .servico-card .btn{
+    padding: 10px 14px;
+    font-size: .95rem;
+  }
 }
