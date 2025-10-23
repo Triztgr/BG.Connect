@@ -523,7 +523,7 @@ a.servico-link:hover .servico-card{
 /* ===== Mobile: grade com 2 colunas ===== */
 @media (max-width: 600px){
   .servicos-grid{
-    grid-template-columns: repeat(2, 1fr); /* antes era 1fr */
+    grid-template-columns: repeat(1, 1fr); /* antes era 1fr */
     gap: 10px;
   }
   /* opcional: botões menores dentro dos cards no mobile */
